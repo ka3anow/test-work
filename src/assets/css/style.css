@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --white: #ffffff;
+    --blue: #232C5E;
+    --blueB: #0047ff26;
+    --grayA: #5E5E5E;
+    --grayB: #F5F5F8;
+    --grayC: rgba(35, 44, 94, 0.12);
+    --grayD: #969696;
+    --border: #232C5E36;
+    --shadow: 0px 6px 25px 0px #1323441A;
+
+}
+body {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+}
+.form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 370px;
+    height: 170px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    background: var(--white);
+    border-radius: 8px;
+    padding: 30px;
+}
+.form label {
+    display: block;
+    line-height: 19px;
+    margin-bottom: 6px;
+}
+.form .myinput {
+    background: var(--white);
+    border: 1px solid var(--blue);
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 18px;
+    width: 100%;
+    line-height: 19px;
+    transition: all 0.3s ease;
+}
+.form .myinput:focus {
+    border: 1px solid var(--grayD);
+    outline: none;
+}
+.chatform {
+    width: 570px;
+    padding: 0;
+    height: auto;
+}
+.chatform .top_bar {
+    height: 31px;
+    background-color: var(--grayB);
+    border-radius: 7px 7px 0 0;
+    border-bottom: 1px solid var(--border);
+}
+.chatform .bottom_bar {
+    background-color: var(--grayB);
+    border-radius: 0 0 7px 7px;
+    border-top: 1px solid var(--border);
+    padding: 32px 36px;
+}
+.chatform .bottom_bar .bottom_inner {
+    position: relative;
+}
+.chatform .content_outer {
+    padding: 30px 11px 30px 32px;
+    height: 424px;
+}
+.chatform .content {
+    height: 100%;
+    overflow-y: scroll;
+    position: relative;
+}
+.chatform .content::-webkit-scrollbar {
+    width: 5px;
+    background-color: var(--grayC);
+    border-radius: 5px;
+}
+.chatform .content::-webkit-scrollbar-thumb {
+    background-color: var(--grayC);
+    border-radius: 0;
+}
+.chatform .message_outer {
+    margin: 0 24px 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.chatform .message_outer.mymessage {
+    align-items: flex-end;
+}
+.chatform .message_outer.mymessage .message {
+    background-color: var(--blueB);
+}
+.chatform .message_outer.mymessage .btn-delete {
+    left: -18px;
+    right: inherit;
+}
+.chatform span.author {
+    margin-bottom: 6px;
+    display: block;
+}
+.chatform .message {
+    background-color: var(--grayB);
+    width: 329px;
+    padding: 16px;
+    position: relative;
+    border-radius: 8px;
+}
+.chatform .message p {
+    margin: 0;
+    padding: 0;
+}
+.chatform span.date {
+    color: var(--grayD);
+    font-size: 13px;
+    font-weight: 400;
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+}
+.chatform .btn-delete {
+    position: absolute;
+    top: 0;
+    right: -18px;
+    background: transparent;
+    border: 0;
+    width: 10px;
+    height: 10px;
+}
+.chatform .btn-delete:before,
+.chatform .btn-delete:after {
+    content: "";
+    width: 12px;
+    height: 1px;
+    background-color: var(--grayD);
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+.chatform .btn-delete:before {
+    transform: rotate(45deg);
+}
+.chatform .btn-delete:after {
+    transform: rotate(-45deg);
+}
+.chatform .myinput {
+    border-color: var(--grayC);
+    padding: 18px 52px 18px 18px;
+}
+.chatform button.send {
+    width: 55px;
+    height: 55px;
+    border: 0;
+    position: absolute;
+    background: transparent;
+    background-image: url(../send.svg);
+    right: 0;
+    top: 0;
+    background-size: 21px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.chatform .loading {
+    color: var(--grayD);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.list-enter-active,
+.list-leave-active {
+    transition: all 0.3s;
+    opacity: 1;
+}
+.list-enter,
+.list-leave-to {
+    opacity: 0;
+}
+.message-enter-active,
+.message-leave-active {
+    transition: all 0.3s;
+    opacity: 1;
+}
+.message-enter,
+.message-leave-to {
+    opacity: 0;
+    transform: translateY(10px);
+}
